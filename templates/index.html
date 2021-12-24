@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+    {% if logged_in %}
+        Старт
+    {% else %}
+        Вход
+    {% endif %}
+{% endblock %}
+
+
+
+{% block content %}
+    {% if logged_in %}
+        <p></p>
+    {% else %}
+            <form action="" method="post" novalidate>
+            {{ form.csrf_token() }}
+            <div class="form registration_form">
+            {%  for field in form if field.name not in ("csrf_token", "submit") %}
+                <p>{{ field.label() }}</p>
+                <p>{{ field }}</p>
+                <p>
+                {% for error in field.errors %}
+                    <p class="error">{{ error }}</p>
+                {%  endfor %}
+                </p>
+            {% endfor %}
+            <p>{{ form.submit(class_="button") }}</p>
+            </div>
+            </form>
+    {% endif %}
+{% endblock %}

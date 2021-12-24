@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="game_over_message">{{ message }}</h1>
+{% endblock %}
+
+{% block scripts%}
+    {{  super() }}
+    <script>setInterval(() => window.location.replace('/'), 3000);</script>
+{% endblock %}

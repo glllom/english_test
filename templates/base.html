@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}title{% endblock %}</title>
+</head>
+<body class="body">
+{% if login != '' %}
+    <a href="/" class="logout">Выйти</a>
+{% endif %}
+
+{% block header %}
+    <header class="header">
+        <div class="container-fluid" >
+            <h3>{{ login }}</h3>
+            <p class="score">Счёт: {{ score }}. (Нужно набрать по 5 в каждом из двух уровней.)</p>
+            <p class="mistakes">Ошибок: {{ mistakes }}. (всего допускается 3 ошибки.)</p>
+        </div>
+    </header>
+
+{% endblock %}
+{% block content %}
+{% endblock %}
+{% block scripts %}
+    <link href="{{ url_for("static", filename="style.css") }}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+</body>
+</html>

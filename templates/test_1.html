@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+    Уровень 1
+{% endblock %}
+{% block header %}
+    <header class="header">
+        <div class="container-fluid" >
+        {{  super() }}
+        <p>Уровень: 1</p>
+        </div>
+    </header>
+{% endblock %}
+{% block content %}
+<h2>На первом тесте вам нужно только выбирать правильные слова из предложенных.</h2>
+    <form action="" method="post" class="radio_form">
+    {{ form.csrf_token() }}
+            <div>
+            <h2>{{ form.choice.label }}</h2>
+                {{ form.choice }}
+                {% for error in form.choice.errors %}
+                    <p class="error">{{ error }}</p>
+                {%  endfor %}
+            <p>{{ form.submit(class_="button") }}</p>
+            </div>
+    </form>
+{% endblock %}

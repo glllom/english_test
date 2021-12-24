@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+    Уровень 2
+{% endblock %}
+{% block header %}
+    <header class="header">
+        <div class="container-fluid" >
+        {{  super() }}
+        <p>Уровень: 2</p>
+        </div>
+    </header>
+{% endblock %}
+{% block content %}
+    <h2>На втором тесте вам нужно вписать правильные слова.</h2>
+    <form action="" method="post" class="radio_form" novalidate>
+    {{ form.csrf_token() }}
+            <div>
+            <h2>{{ form.answer.label }}</h2>
+                {{ form.answer }}
+                {% for error in form.answer.errors %}
+                    <p class="error">{{ error }}</p>
+                {%  endfor %}
+            <p>{{ form.submit(class_="button") }}</p>
+            </div>
+    </form>
+{% endblock %}

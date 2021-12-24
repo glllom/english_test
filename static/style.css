@@ -1,0 +1,91 @@
+/*animation instruction*/
+@keyframes slideInLeft {
+  0% {
+   transform: translateX(-100%);
+   }
+  100% {
+   transform: translateX(0);
+   }
+}
+
+/*header style*/
+.header{
+ position: relative;
+ display: flex;
+ padding-top: 10px;
+ padding-left: 20px;
+ font-size: larger;
+ border-radius: 6px;
+ background: #287ea1;
+}
+h2 {
+ display: flex;
+ justify-content: center;
+ width: 100%;
+
+}
+.form {
+ position: fixed;
+ top: 180px;
+ left: 40px;
+ padding: 5px;
+ border: 5px solid rgba(0, 0, 0, 0.58);
+ border-radius: 10px;
+ background: rgba(41, 126, 161, 0.51);
+}
+
+.registration_form {
+ animation: 0.7s ease-out 0s 1 slideInLeft;
+}
+
+.radio_form {
+ position: absolute;
+ top: 350px;
+ left: 30px;
+ padding: 5px;
+ width: 30%;
+ border: 5px solid rgba(0, 0, 0, 0.58);
+ border-radius: 10px;
+ background: rgba(41, 126, 161, 0.51);
+}
+
+.button {
+  height: 36px;
+  position: relative;
+  font-size: larger;
+  border-radius: 5px;
+  left: 35px;
+  background: #297ea1;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  transition: all 500ms ease;
+  }
+
+ .button:hover{
+  background: rgba(0,0,0,0);
+  color: #3a3636;
+  box-shadow: inset 0 0 0 2px #3a7999;
+ }
+.button:active{
+  background: rgba(0,0,0,0);
+  color: #3a3636;
+  box-shadow: inset 1px 1px 1px 0px #3a7999;
+ }
+.error {
+ font-size: smaller;
+ color: red;
+}
+.logout {
+ position: relative;
+ display: flex;
+ justify-content: end;
+ font-size: larger;
+}
+.game_over_message {
+ color: #930b0b;
+ font-size: x-large;
+}
+.mistakes {
+ color: black;
+}
